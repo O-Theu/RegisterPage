@@ -1,0 +1,118 @@
+:root {
+    --branco: #FFFFFF;
+    --branco-secundario: #F6FBF9;
+    --preto: #212B27;
+    --preto-secundario: #32403B;
+    --verde: #84C7AE;
+    --cinza: #00000080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-image: url("/src/background.png");
+    background-repeat: no-repeat;
+    background-position: unset;
+    background-size: cover;
+}
+
+.formulario {
+    background-color: var(--branco-secundario);
+    border-radius: 50px;
+    text-align: center;
+    margin: 23vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__titulo {
+    font-size: 35px;
+    font-weight: 700;
+    padding-top: 1.5em;
+    color: var(--preto);
+}
+
+.form__texto {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--preto-secundario);
+    margin: .5em 4em 2em 4em;
+}
+
+.form__input {
+    background-color: var(--branco);
+    padding: 1.5em 1em;
+    margin: .5em auto;
+    width: 80%;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.form__input::placeholder {
+    color: var(--cinza);
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 1em;
+}
+
+.btn__enviar {
+    background-color: var(--verde);
+    padding: 1em 1em;
+    width: 60%;
+    margin: 1em auto 0 auto;
+    border: none;
+    border-radius: 23px;
+    color: var(--branco);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.btn__enviar:hover {
+    opacity: 1;
+}
+
+.texto__login {
+    padding: .5em 0 3.5em 0;
+}
+
+.link__login, 
+.texto__login {
+    font-weight: 400;
+    color: var(--preto-secundario);
+}
+
+@media screen and (max-width:720px){
+    .formulario {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width:720px){
+    .formulario {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .formulario {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width:1400px){
+    .formulario {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:1728px){
+    .formulario {
+        width: 25%;
+    }
+}
