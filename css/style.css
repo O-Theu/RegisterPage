@@ -4,6 +4,8 @@
     --preto: #212B27;
     --preto-secundario: #32403B;
     --verde: #84C7AE;
+    --fundo: #A7D7C5;
+    --verde-secundario: #C1E3D6;
     --cinza: #00000080;
 }
 
@@ -13,20 +15,50 @@
 }
 
 body {
+    position: relative;
+    background-color: var(--verde);
     font-family: 'Karla', sans-serif;
-    background-image: url("../src/background.png");
     background-repeat: no-repeat;
     background-position: unset;
     background-size: cover;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+body::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: -550px;
+    left: -250px;
+    width: 750px;
+    height: 750px;
+    background: var(--verde-secundario);
+    border-radius: 160px;
+    transform: rotate(45deg);
+}
+
+body::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    bottom: -550px;
+    right: -250px;
+    width: 750px;
+    height: 750px;
+    background: var(--verde-secundario);
+    border-radius: 160px;
+    transform: rotate(45deg);
 }
 
 .formulario {
+    display: block;
     background-color: var(--branco-secundario);
     border-radius: 50px;
     text-align: center;
-    margin: 23vh auto;
     display: flex;
     flex-direction: column;
+    margin: 20vh auto;
 }
 
 .form__titulo {
@@ -41,6 +73,13 @@ body {
     font-weight: 400;
     color: var(--preto-secundario);
     margin: .5em 4em 2em 4em;
+}
+
+.form_label {
+    text-align: start;
+    margin: 12px 0 0 35px;
+    font-weight: 700;
+    color: var(--preto);
 }
 
 .form__input {
@@ -91,28 +130,59 @@ body {
     .formulario {
         width: 95%;
     }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    body::after {
+       display: none;
+    }
+    
+    body::before {
+        display: none;
+    }
 }
 
 @media screen and (min-width:720px){
     .formulario {
         width: 50%;
     }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    body::after {
+        display: block;
+     }
+     
+     body::before {
+         display: block;
+     }
 }
 
 @media screen and (min-width:1024px){
     .formulario {
         width: 40%;
     }
+
+    body {
+        overflow-y: hidden;
+    }
+
 }
 
 @media screen and (min-width:1400px){
     .formulario {
         width: 30%;
     }
+
 }
 
 @media screen and (min-width:1728px){
     .formulario {
         width: 25%;
     }
+
 }
